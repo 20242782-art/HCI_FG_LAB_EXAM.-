@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>About Me</title>
+  <title>Me as a Student</title>
   <style>
     body {
       background-color: #14170f;
@@ -11,22 +11,97 @@
       padding: 40px;
     }
 
-    img {
+    img.profile {
       width: 300px;
       height: 300px;
       border-radius: 50%;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #cccccc;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: justify;
+    }
+
+    a {
+      color: yellow;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 20px;
+    }
+
+    ul.social {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 0;
+      margin-top: 30px;
+    }
+
+    ul.social li img {
+      width: 40px;
+      height: 40px;
+    }
+
+    #student-section {
+      display: none;
+    }
+
+    #social-section {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <img src="IMG_2146.jpeg" alt="my photo">
+  <img id="profile-photo" class="profile" src="IMG_2146.jpeg" alt="my photo" onclick="showSocialOnly()" style="cursor: pointer;">
 
-  <h1>[Michaelangelo Vergara]</h1>
+  <h1 id="name-heading" onclick="showStudentSection()" style="cursor: pointer;">Michaelangelo Vergara</h1>
 
-  <p>"[Kunting Bato,Kunting semento munumento]"</p>
+  <p id="quote-line" class="quote">"Kunting Bato, Kunting semento munumento"</p>
 
-  <p>[im a world boxing champion]</p>
+  <p id="bio-line">im a world boxing champion</p>
+
+  <div id="student-section">
+    <h2>Me as a Student</h2>
+
+    <p>My name is Michaelangelo Vergara, and this page is about who I am as a student. "Kunting Bato, Kunting semento munumento" is the quote I try to live by, since every small effort I put in today builds toward something bigger.</p>
+
+    <p>Outside of school, I'm a world boxing champion. Balancing training and academics has taught me discipline, time management, and how to stay focused even when things get tough.</p>
+
+    <p>As a student, I bring that same discipline into my studies. I believe that consistency, whether in the ring or in the classroom, is what turns small steps into real achievements.</p>
+  </div>
+
+  <div id="social-section">
+    <ul class="social">
+      <li><a href="https://facebook.com/[yourusername]"><img src="facebook-icon.png" alt="Facebook"></a></li>
+      <li><a href="https://instagram.com/[yourusername]"><img src="instagram-icon.png" alt="Instagram"></a></li>
+      <li><a href="https://twitter.com/[yourusername]"><img src="twitter-icon.png" alt="Twitter"></a></li>
+      <li><a href="https://tiktok.com/@[yourusername]"><img src="tiktok-icon.png" alt="TikTok"></a></li>
+      <li><a href="https://linkedin.com/in/[yourusername]"><img src="linkedin-icon.png" alt="LinkedIn"></a></li>
+    </ul>
+  </div>
+
+  <script>
+    function showStudentSection() {
+      document.getElementById('student-section').style.display = 'block';
+    }
+
+    function showSocialOnly() {
+      document.getElementById('profile-photo').style.display = 'none';
+      document.getElementById('name-heading').style.display = 'none';
+      document.getElementById('quote-line').style.display = 'none';
+      document.getElementById('bio-line').style.display = 'none';
+      document.getElementById('student-section').style.display = 'none';
+      document.getElementById('social-section').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
